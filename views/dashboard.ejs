@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoDesk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    /* Profile section */
+    .profile {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile .profile-name {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      min-width: 150px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .profile-dropdown a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .profile-dropdown a:hover {
+      background-color: #ddd;
+    }
+
+    .profile:hover .profile-dropdown {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/inventory">Inventory</a></li>
+      <li><a href="/sales">Sales</a></li>
+      <li><a href="/customers">Customer Management</a></li>
+      <li><a href="/inventory/get">CatLog</a></li>
+    </ul>
+
+    <div class="profile">
+      <span class="profile-name"><%= user.username %></span>
+      <div class="profile-dropdown">
+        <a href="/profile">View Profile</a>
+        <a href="/login">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Welcome to your Dashboard, <%= user.username %>!</h1>
+
+</body>
+</html>

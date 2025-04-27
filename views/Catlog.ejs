@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Car ID</th>
+                <th>Name</th>
+                <th>Model</th>
+                <th>Quantity</th>
+                <th>Cost Price (₹)</th>
+                <th>Color</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (items.length > 0) { %>
+                <% items.forEach(item => { %>
+                    <tr>
+                        <td><%= item.CarID %></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.model %></td>
+                        <td><%= item.quantity %></td>
+                        <td>₹<%= item.costPrice.toFixed(2) %></td>
+                        <td><%= item.color %></td>
+                        <td><%= item.createdAt.toDateString() %></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="7" style="text-align: center;">No inventory items found</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

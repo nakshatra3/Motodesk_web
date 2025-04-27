@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Dealership Management</title>
+</head>
+<body>
+    <h1>Vehicle Dealership Management</h1>
+    
+    <h2>Add Customer</h2>
+    <form id="addCustomerForm" action="/customer/addCustomer" method="POST">
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="car">Select Car:</label>
+        <select id="car" name="car" required>
+            <option value="Car A">Car A</option>
+            <option value="Car B">Car B</option>
+            <option value="Car C">Car C</option>
+            <option value="Car D">Car D</option>
+            <option value="Car E">Car E</option>
+        </select><br><br>
+
+        <label for="model">Select Model:</label>
+        <select id="model" name="model" required>
+            <option value="Model 1">Model 1</option>
+            <option value="Model 2">Model 2</option>
+            <option value="Model 3">Model 3</option>
+        </select><br><br>
+
+        <label for="color">Select Color:</label>
+        <select id="color" name="color" required>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+        </select><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Enquiry">Enquiry</option>
+            <option value="Booked">Booked</option>
+        </select><br><br>
+
+        <button type="submit">Add Customer</button>
+    </form>
+
+    <h2>Get Customer Details</h2>
+    <form id="getCustomerForm" action="/customer/getCustomerDetails" method="GET">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="name" required><br><br>
+
+        <label for="customerPhone">Phone Number:</label>
+        <input type="tel" id="customerPhone" name="phone" required><br><br>
+
+        <button type="submit">Get Customer Details</button>
+    </form>
+
+</body>
+</html>
