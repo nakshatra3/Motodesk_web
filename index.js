@@ -32,10 +32,6 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-app.get('/',(req,res)=>{
- res.send("Hello Motodesk");
-});
-
 passport.serializeUser((user, done) => {
   done(null, user);
 });
