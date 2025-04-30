@@ -32,6 +32,10 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+app.get("/",{
+ console.log("Hello Motodesk");
+});
+
 passport.serializeUser((user, done) => {
   done(null, user);
 });
